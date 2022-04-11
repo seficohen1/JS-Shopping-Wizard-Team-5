@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script.js" defer></script>
+    <script src="./ProductPage.js" defer></script>
     <title>JS Shopping Wizard</title>
 </head>
 
@@ -36,6 +37,9 @@
         </section>
         <section class="product_page">
             <div class="product_image">
+              <div class="display_content">
+                <img src="" alt="" width="250px" height="250px" hidden>
+              </div>
                 <div class="image_carousel">
                     <ul>
                         <li>
@@ -62,14 +66,14 @@
             <div class="product_details">
                 <h4>Brown t-shirt</h4>
                 <p>Price</p>
-                <h4>14.55&#x20AC;</h4>
-                <label for="size">Size:</label>
+                <h4 id="price">14.55 &#x20AC;</h4>
+                <label for="size">Size:</label><br> 
                 <select name="size" id="size">
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
                 </select>
                 <div class="color_option">
                   <p>Color</p>
@@ -106,7 +110,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="error_message">
+                <div class="complete_message">
                   <h4></h4>
                 </div>
                 <button id="buy_btn">Buy</button>

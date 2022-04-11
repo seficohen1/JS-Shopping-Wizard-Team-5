@@ -26,6 +26,8 @@ const price = {
 const { size, color } = productDB;
 const errorMessage =
   'You must pick a color for your shirt before continuing with your purchase';
+const successMessage =
+  'Hooray! please fill your personal data to finish your purchase ';
 
 // setting the coresponding price shirt size
 const getPrice = () => {
@@ -60,10 +62,16 @@ buyBtn.addEventListener('click', () => {
   productDB.size = sizeSelectionEl.value;
   productDB.color = selectedColor;
   productDB.price = priceEl.textContent;
+  const completeMessageEl = document.querySelector('.complete_message h4');
   if (productDB.color == undefined) {
-    document.querySelector('.error_message h4').textContent = errorMessage;
+    completeMessageEl.textContent = errorMessage;
+    completeMessageEl.style.color = 'red';
   } else {
-    productPageContainer.style.display = 'none';
+    completeMessageEl.textContent = successMessage;
+    completeMessageEl.style.color = 'green';
+    setTimeout(() => {
+      productPageContainer.style.display = 'none';
+    }, 2500);
   }
   console.log(productDB);
 });
